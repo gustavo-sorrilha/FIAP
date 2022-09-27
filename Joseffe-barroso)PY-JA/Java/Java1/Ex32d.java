@@ -1,0 +1,28 @@
+package Java;
+
+import java.util.Scanner;
+
+public class Ex32d {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		int valueOne, valueTwo;
+
+		System.out.print("Informe o primeiro valor: ");
+		valueOne = scanner.nextInt();
+
+		System.out.print("Informe o segundo valor: ");
+		valueTwo = scanner.nextInt();
+
+		do {
+			System.out.print("O segundo valor precisar ser maior que o primeiro. Informe novamente: ");
+			valueTwo = scanner.nextInt();
+		} while (valueTwo <= valueOne);
+
+		System.out.print("Thank you");
+
+		scanner.close();
+	}
+
+}
