@@ -1,0 +1,19 @@
+[
+    {
+        "id": "d7b317aac3627a81",
+        "type": "http in",
+        "z": "11ce8f005a3b1185",
+        "name": "Entrada",
+        "url": "/conversa",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "a6f210aaa73fe0d2"
+            ]
+        ]
+    }
+]
