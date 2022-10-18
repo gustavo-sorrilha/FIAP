@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     div{
+        background-color: red;
+        color: white;
+     }
+    </style>
+
+</head>
+<script>
+    //alert("Dentro da Página");
+</script>
+
+<body>
+    <label for="txtNumero1">Numero</label>
+    <input type="text" id="txtNumero1">
+    <label for="txtNumero2">Numero</label>
+    <input type="text" id="txtNumero2">
+    <input type="button" value="Mostrar o comparativo" onclick="mostrarMenor(
+        document.getElementById('txtNumero1').value,
+        document.getElementById('txtNumero2').value);">
+    <hr>
+    <label for="txtNumero3">Numero</label>
+    <input type="text" id="txtNumero3">
+    <label for="txtNumero4">Numero</label>
+    <input type="text" id="txtNumero4">
+    <input type="button" value="Mostrar o comparativo" onclick="mostrarMenor(
+        document.getElementById('txtNumero3').value,
+        document.getElementById('txtNumero4').value);">
+    <br/>
+    <div id="idResultado"></div>
+    
+</body>
+<script src="script01.js"></script>
+</html>
