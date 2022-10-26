@@ -1,1 +1,49 @@
-<mxfile host="app.diagrams.net" modified="2022-10-26T21:42:11.191Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" version="20.5.1" etag="gF19K3RR0BabNCD9CMAa" type="github"><diagram id="1bxYN0X_5_KDz2tXXBSb">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-10-26T22:00:27.561Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="BXVILq7lPrp8C3KsEpWE" version="20.5.1" type="github">
+  <diagram id="1bxYN0X_5_KDz2tXXBSb" name="Página-1">
+    <mxGraphModel dx="536" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2uIPJYolehgGWwBgfzHt-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2uIPJYolehgGWwBgfzHt-6" target="2uIPJYolehgGWwBgfzHt-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-6" value="Boas Vindas do Sistema" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="215" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2uIPJYolehgGWwBgfzHt-8" target="2uIPJYolehgGWwBgfzHt-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-8" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="120" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2uIPJYolehgGWwBgfzHt-10" target="2uIPJYolehgGWwBgfzHt-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-10" value="Level 0" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="215" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2uIPJYolehgGWwBgfzHt-12" target="2uIPJYolehgGWwBgfzHt-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-12" value="Começa a ganho de habilidades&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="190" y="400" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2uIPJYolehgGWwBgfzHt-14" target="2uIPJYolehgGWwBgfzHt-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-14" value="Nvl 1" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="215" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2uIPJYolehgGWwBgfzHt-17" target="2uIPJYolehgGWwBgfzHt-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-17" value="Até o nlv 5 terá sub-habilidades" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="235" y="600" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="2uIPJYolehgGWwBgfzHt-19" value="Nvl 5" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="215" y="710" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
