@@ -1,0 +1,766 @@
+[
+    {
+        "id": "59aa5e5c5bd5a564",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5ab1343baa2c77d4",
+        "type": "switch",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Identificar Tipo de Mensagem",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "photo",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "voice",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "message",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "sticker",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "animation",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 410,
+        "y": 300,
+        "wires": [
+            [
+                "8f5abb2b32db2933",
+                "6c070556cec316e0"
+            ],
+            [
+                "6e5f83e3c0c5a768",
+                "e5f6019c7e9c0faf"
+            ],
+            [
+                "2a5881f3b1d2d0a2",
+                "a885c7f8c8b4b16c"
+            ],
+            [
+                "f73bd1f3d50c2655",
+                "064c87046c66cde0"
+            ],
+            [
+                "f73bd1f3d50c2655",
+                "064c87046c66cde0"
+            ]
+        ]
+    },
+    {
+        "id": "2139b4b4555a8748",
+        "type": "function",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Ret Imagem",
+        "func": "msg.payload = {\n    chatId : msg.chatId,\n    type : \"message\",\n    content : \"Meus criadores ainda não me ensinaram a ver imagens.\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 500,
+        "wires": [
+            [
+                "1001885499660e86"
+            ]
+        ]
+    },
+    {
+        "id": "c666cde3c38f3cd6",
+        "type": "watson-speech-to-text",
+        "z": "59aa5e5c5bd5a564",
+        "name": " STT",
+        "alternatives": 1,
+        "speakerlabels": true,
+        "smartformatting": false,
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "custom-weight": "0.5",
+        "band": "BroadbandModel",
+        "bandhidden": "",
+        "keywords": "",
+        "keywords-threshold": "0.5",
+        "word-confidence": false,
+        "password": "",
+        "apikey": "tlRFSDhGwiBfY_EGt_xoAR21RT4zfoz8OWlwbBYVnaZs",
+        "payload-response": true,
+        "streaming-mode": false,
+        "streaming-mute": true,
+        "auto-connect": false,
+        "discard-listening": false,
+        "disable-precheck": false,
+        "service-endpoint": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/6b6e8863-da16-4349-9b27-81f9fae3e3d7",
+        "x": 1170,
+        "y": 240,
+        "wires": [
+            [
+                "696b02bd86199059",
+                "f1ce2ba05d7c65fd"
+            ]
+        ]
+    },
+    {
+        "id": "6e5f83e3c0c5a768",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Entrada Áudio",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "696b02bd86199059",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Retorno STT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a885c7f8c8b4b16c",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Entrada Texto",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f1ce2ba05d7c65fd",
+        "type": "watson-assistant-v2",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Escola",
+        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/2a8cd0b2-3ab7-44f2-ba5e-a61f06785fd0",
+        "assistant_id": "8e53022b-242b-46ce-aee3-7ff521564286",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": true,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 1370,
+        "y": 240,
+        "wires": [
+            [
+                "ddd01259b715a924",
+                "67c2f54c9652a511"
+            ]
+        ]
+    },
+    {
+        "id": "ddd01259b715a924",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Resposta para o Telegram",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1560,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "2a5881f3b1d2d0a2",
+        "type": "change",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Prepara Entrada Texto",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.session_id",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "chatId",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.content",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 360,
+        "wires": [
+            [
+                "ceb48037200b4831"
+            ]
+        ]
+    },
+    {
+        "id": "e08352b7d15b8c0f",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Retorno",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2660,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "8f5abb2b32db2933",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "En Imagem",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "6c070556cec316e0",
+        "type": "change",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Prepara Entrada Imagem",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.session_id",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "chatId",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.content",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 440,
+        "wires": [
+            [
+                "2139b4b4555a8748"
+            ]
+        ]
+    },
+    {
+        "id": "e5f6019c7e9c0faf",
+        "type": "change",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Prepara Entrada Áudio",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.session_id",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "chatId",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 200,
+        "wires": [
+            [
+                "916831d82c295ebc"
+            ]
+        ]
+    },
+    {
+        "id": "916831d82c295ebc",
+        "type": "function",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Entrada Áudio",
+        "func": "msg.payload = msg.payload.weblink;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 240,
+        "wires": [
+            [
+                "c666cde3c38f3cd6"
+            ]
+        ]
+    },
+    {
+        "id": "064c87046c66cde0",
+        "type": "change",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Prepara Entrada Sticker ou GIF",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.session_id",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "chatId",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.content",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 80,
+        "wires": [
+            [
+                "c9287f8c195b0a13"
+            ]
+        ]
+    },
+    {
+        "id": "c9287f8c195b0a13",
+        "type": "function",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Ret Sticker ou GIF",
+        "func": "msg.payload = {\n    chatId : msg.chatId,\n    type : \"message\",\n    content : \"Ainda não aprendi o humor dos humanos...\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 160,
+        "wires": [
+            [
+                "1001885499660e86"
+            ]
+        ]
+    },
+    {
+        "id": "f73bd1f3d50c2655",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "En Sticker ou GIF",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ceb48037200b4831",
+        "type": "watson-assistant-v2",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Escola",
+        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/2a8cd0b2-3ab7-44f2-ba5e-a61f06785fd0",
+        "assistant_id": "8e53022b-242b-46ce-aee3-7ff521564286",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": true,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 850,
+        "y": 300,
+        "wires": [
+            [
+                "fe44b88976a9a3d7",
+                "2fd5c6638a80e0d2"
+            ]
+        ]
+    },
+    {
+        "id": "fe44b88976a9a3d7",
+        "type": "change",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Prepara Retorno",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "payload.output.generic[0].text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 300,
+        "wires": [
+            [
+                "1001885499660e86"
+            ]
+        ]
+    },
+    {
+        "id": "de1b168dbcd0cd96",
+        "type": "watson-text-to-speech",
+        "z": "59aa5e5c5bd5a564",
+        "name": " TTS",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaV3Voice",
+        "voicehidden": "",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "ICiLsotrG4YvshzXSxkhpSY0pB3_4y3pAtZ2Sfh9NTOt",
+        "payload-response": true,
+        "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/f933b747-8dd9-471f-b007-8c8311f4f7a2",
+        "credentials": {},
+        "x": 2050,
+        "y": 240,
+        "wires": [
+            [
+                "49d9df602a2a6a43",
+                "5f36e7e6d5de0455"
+            ]
+        ]
+    },
+    {
+        "id": "49d9df602a2a6a43",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Ret TTS",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2140,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3c3bb3af4e442312",
+        "type": "function",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Acesso não autorizado",
+        "func": "msg.payload.content = \"Você não é um usuário autorizado.\";\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 660,
+        "wires": [
+            [
+                "1001885499660e86"
+            ]
+        ]
+    },
+    {
+        "id": "44954b16802468bb",
+        "type": "function",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Proc Entrada Áudio",
+        "func": "msg.payload = msg.payload.content;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1850,
+        "y": 240,
+        "wires": [
+            [
+                "de1b168dbcd0cd96"
+            ]
+        ]
+    },
+    {
+        "id": "5f36e7e6d5de0455",
+        "type": "function",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Proc Saída Áudio",
+        "func": "msg.payload = {\n    chatId : msg.chatId,\n    type : \"voice\",\n    content : msg.payload\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2270,
+        "y": 240,
+        "wires": [
+            [
+                "1001885499660e86"
+            ]
+        ]
+    },
+    {
+        "id": "67c2f54c9652a511",
+        "type": "change",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Prepara Retorno",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "payload.output.generic[0].text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1610,
+        "y": 240,
+        "wires": [
+            [
+                "44954b16802468bb"
+            ]
+        ]
+    },
+    {
+        "id": "cf3cd19711ec84cf",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Entrada Não Autorizada",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "2fd5c6638a80e0d2",
+        "type": "debug",
+        "z": "59aa5e5c5bd5a564",
+        "name": "Resposta para o Telegram",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e7742a819382a08c",
+        "type": "telegram receiver",
+        "z": "59aa5e5c5bd5a564",
+        "name": "",
+        "bot": "b1c28cb3ef6b7eb9",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "5ab1343baa2c77d4"
+            ],
+            [
+                "3c3bb3af4e442312",
+                "cf3cd19711ec84cf"
+            ]
+        ]
+    },
+    {
+        "id": "1001885499660e86",
+        "type": "telegram sender",
+        "z": "59aa5e5c5bd5a564",
+        "name": "",
+        "bot": "b1c28cb3ef6b7eb9",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 2530,
+        "y": 240,
+        "wires": [
+            [
+                "e08352b7d15b8c0f"
+            ]
+        ]
+    },
+    {
+        "id": "b1c28cb3ef6b7eb9",
+        "type": "telegram bot",
+        "botname": "Already356_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]
