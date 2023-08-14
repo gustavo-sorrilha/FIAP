@@ -1,0 +1,3 @@
+Sistema Escolar: (Funcionários,alunos,professor, pais e responsaveis,pagamento,departamento,historico,calendario escolar,disciplinas,aulas,endereço,contatos)
+Loja de produtos de informática: (produto, cliente, nota_fiscal, funcionario, forma_pgto, fornecedor,promoção,unidades,contatos,fornecedor)
+Clínica Médica: (Usuarios,funcionarios,médicos,enfermeiro,especialidade,contabilidade,convenios,contatos,equipamentos,prontuario)

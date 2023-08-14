@@ -1,0 +1,25 @@
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 100;
+    
+
+}
+
+li{
+    display:inline;
+}
+
+p{
+    text-align: justify;
+}
+
+nav{
+    background-color: beige ;
+}
+
+#principal{
+    width: 650px;
+    margin: 0 auto;
+}

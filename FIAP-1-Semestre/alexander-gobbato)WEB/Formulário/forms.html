@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciando Form</title>
+    <style>
+        #idEnviar{
+            border:1px solid black;
+        }
+        input{
+            background-color: yellow;
+            color: red;
+            text-align:center;
+            align-items: center;
+            display:flex;
+            
+            
+        }
+        form{
+            align-items: center;
+            margin: auto;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <form method="get" action="cadastro">
+        <label for="idLogin">Login:</label>
+        <input type="text" id="idLogin" name="idLogin"><br/>
+        <label for="idPassword">Password:</label>
+        <input type="password" id="idPassword" name="idPassword"><br/>
+        <label for="idIdade">Idade:</label>
+        <input type="number" id="idIdade" name="idIdade"><br/>
+
+        <div>
+         <label for="idSexo">Sexo:</label>
+         <input type="radio" id="idSexoM" name="idSexo">Masculino
+         <input type="radio" id="idSexoF" name="idSexo">Feminino<br/>
+        </div>
+        
+        <div>
+         <br/><label for="idProgramação">Linguagues:</label>
+         <input type="checkbox" id="idjavascript">Javascript<br/>
+         <input type="checkbox" id="idjavascript">Python<br/> 
+        </div>
+        
+        <br/> <input type="submit" id="Enviar" name="idEnviar">
+       
+    </form>
+</body>
+</html>
