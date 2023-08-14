@@ -1,0 +1,6 @@
+felipe
+mouse,1,342.00
+
+vitor
+teclado,2,321.44
+
